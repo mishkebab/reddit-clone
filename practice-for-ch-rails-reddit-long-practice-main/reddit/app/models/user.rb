@@ -47,4 +47,10 @@ class User < ApplicationRecord
         class_name: :Sub,
         dependent: :destroy,
         inverse_of: :moderator
+
+    has_many :posts,
+        foreign_key: :author_id,
+        class_name: :Post,
+        dependent: :destroy,
+        inverse_of: :author
 end

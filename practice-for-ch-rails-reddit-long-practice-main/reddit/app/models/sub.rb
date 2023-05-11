@@ -16,5 +16,8 @@ class Sub < ApplicationRecord
 
   validates :title, :moderator_id, presence: true
 
+  has_many :posts,
+    dependent: :destroy,
+    inverse_of: :sub
   
 end
