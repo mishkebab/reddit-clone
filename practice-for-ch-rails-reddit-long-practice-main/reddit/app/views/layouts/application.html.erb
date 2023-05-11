@@ -8,8 +8,13 @@
 
     <%= stylesheet_link_tag "application" %>
   </head>
-
+  <header>
+    <% if logged_in? %>
+      <h1>Welcome to Reddit <%# @current_user.username %></h1>
+    <% end %>
+  </header>
   <body>
+    <%= flash[:errors] %>
     <%= yield %>
   </body>
 </html>
